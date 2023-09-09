@@ -12,6 +12,6 @@ val Pink40 = Color(0xFF7D5260)
 
 val buttonBackgroundBlack = Color(0xFF1E1E20)
 val buttonTextColor = Color(0xFF48B634)
-val buttonBorderColor = Color(0xFFFFFFFF)
+val buttonBorderColor = Color(0xFF555555)
 val buttonTextColorSoftRed = Color(0xFFBD4F4F)
 val buttonTextColorSoftBlue = Color(0xFF3E90BB)
