@@ -22,6 +22,8 @@ fun performButtonExecution(
             expressionState.value += "-${expressionState.value}"
         }
         ButtonTypes.EVALUATE -> {
+            if (expressionState.value.isEmpty())
+                return listOf("Error: Empty input")
             val validationResult = validateExpression(expressionState.value)
             if (validationResult.isValid) {
                 Log.d("debug", expressionState.value)

@@ -8,13 +8,14 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.example.everythingapp.ui.calculatorComponents.CalculatorKeyPad
 import com.example.everythingapp.ui.calculatorComponents.EditorComponent
 
 @Preview
 @Composable
 fun CalculatorScreen(
-    expressionState: MutableState<String> = mutableStateOf("Edit Text")
+    expressionState: MutableState<String> = mutableStateOf("")
 ) {
     Column(
         modifier = Modifier.fillMaxHeight(),

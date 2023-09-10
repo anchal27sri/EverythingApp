@@ -15,9 +15,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.everythingapp.R
 import com.example.everythingapp.ui.theme.buttonBackgroundBlack
 import com.example.everythingapp.ui.theme.buttonBorderColor
 import com.example.everythingapp.ui.theme.buttonTextColor
@@ -53,6 +55,7 @@ fun CalculatorButton(
 fun CalculatorButton(
     modifier: Modifier = Modifier,
     buttonText: String = "2",
+    toastError: String = stringResource(id = R.string.toast_error),
     textColor: Color = buttonTextColor,
     backgroundColor: Color = buttonBackgroundBlack,
     expressionState: MutableState<String> = mutableStateOf(""),
@@ -67,7 +70,7 @@ fun CalculatorButton(
         onClickButton = {
             val errorList = performButtonExecution(expressionState, buttonText)
             if (errorList.isNotEmpty()) {
-                Toast.makeText(localContext, "Error: $errorList[0]", Toast.LENGTH_SHORT).show()
+                Toast.makeText(localContext, "$toastError ${errorList[0]}", Toast.LENGTH_SHORT).show()
             }
         },
         encodeBorderInfo = encodeBorderInfo
