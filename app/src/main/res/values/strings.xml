@@ -2,4 +2,6 @@
     <string name="app_name">EverythingApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="toast_error">Error:</string>
+    <string name="back_space_content_desc">Delete last character</string>
+    <string name="go_scientific">Sci</string>
 </resources>

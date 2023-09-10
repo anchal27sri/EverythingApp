@@ -32,7 +32,6 @@ fun CalculatorButton(
     textColor: Color = buttonTextColor,
     backgroundColor: Color = buttonBackgroundBlack,
     onClickButton: () -> Unit = {},
-    encodeBorderInfo: Int = 0,
 ) {
     OutlinedButton(
         modifier = modifier.height(96.dp),
@@ -59,7 +58,6 @@ fun CalculatorButton(
     textColor: Color = buttonTextColor,
     backgroundColor: Color = buttonBackgroundBlack,
     expressionState: MutableState<String> = mutableStateOf(""),
-    encodeBorderInfo: Int = 0,
     localContext: Context = LocalContext.current
 ) {
     CalculatorButton(
@@ -73,7 +71,6 @@ fun CalculatorButton(
                 Toast.makeText(localContext, "$toastError ${errorList[0]}", Toast.LENGTH_SHORT).show()
             }
         },
-        encodeBorderInfo = encodeBorderInfo
     )
 }
 
@@ -81,7 +78,7 @@ fun CalculatorButton(
 @Composable
 fun PreviewCalculatorButton() {
     CalculatorButton(
-        modifier = Modifier.fillMaxWidth(0.25f),
+        modifier = Modifier.fillMaxWidth(),
         buttonText = "-",
         onClickButton = { },
     )

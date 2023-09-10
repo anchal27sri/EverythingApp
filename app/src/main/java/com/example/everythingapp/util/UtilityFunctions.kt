@@ -13,13 +13,23 @@ fun performButtonExecution(
             expressionState.value = ""
         }
         ButtonTypes.BRACES -> {
-            expressionState.value += buttonText
+            if (expressionState.value.isEmpty()) {
+                expressionState.value += "("
+            } else {
+                val lastCharacter = expressionState.value[expressionState.value.length - 1]
+                if (buttonTextToTypeMap[lastCharacter.toString()] == ButtonTypes.OPERAND)
+                    expressionState.value += ")"
+                else if (buttonTextToTypeMap[lastCharacter.toString()] == ButtonTypes.OPERATOR)
+                    expressionState.value += "("
+                else
+                    return listOf("Error: Wrong Input")
+            }
         }
         ButtonTypes.OPERATOR, ButtonTypes.OPERAND -> {
             expressionState.value += buttonText
         }
         ButtonTypes.INVERT -> {
-            expressionState.value += "-${expressionState.value}"
+            expressionState.value = "-${expressionState.value}"
         }
         ButtonTypes.EVALUATE -> {
             if (expressionState.value.isEmpty())
@@ -33,7 +43,10 @@ fun performButtonExecution(
                                             result.toInt().toString()
                                         else
                                             result.toString()
-                expressionState.value = resultToBeShown
+                if (resultToBeShown != "infinity")
+                    expressionState.value = resultToBeShown
+                 else
+                    return listOf("Error: Result exceeded calculator limit")
             } else {
                 return validationResult.errors
             }
