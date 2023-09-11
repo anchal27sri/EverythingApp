@@ -1,5 +1,6 @@
 package com.example.everythingapp.ui.calculatorComponents
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
@@ -10,6 +11,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.everythingapp.ui.buttons.CalculatorButton
 import com.example.everythingapp.ui.theme.buttonTextColorSoftBlue
 import com.example.everythingapp.ui.theme.buttonTextColorSoftRed
+import com.example.everythingapp.ui.theme.keypadBackgroundColor
 
 @Preview
 @Composable
@@ -18,7 +20,7 @@ fun CalculatorKeyPad(
     expressionState: MutableState<String> = mutableStateOf("")
 ) {
     Column(
-        modifier = modifier,
+        modifier = modifier.background(color = keypadBackgroundColor),
     ) {
         Row {
             CalculatorButton(

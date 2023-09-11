@@ -2,8 +2,10 @@ package com.example.everythingapp.util
 
 import android.util.Log
 import androidx.compose.runtime.MutableState
+import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
 import net.objecthunter.exp4j.ValidationResult
+import java.lang.Exception
 
 fun performButtonExecution(
     expressionState: MutableState<String>,
@@ -56,6 +58,11 @@ fun performButtonExecution(
 }
 
 fun validateExpression(text: String): ValidationResult {
-    val expression = ExpressionBuilder(text).build()
-    return expression.validate(true)
+    val validationResult = try {
+        val expression = ExpressionBuilder(text).build()
+        expression.validate(true)
+    } catch (e: Exception) {
+        ValidationResult(false, listOf("Error: Wrong Input"))
+    }
+    return validationResult
 }
