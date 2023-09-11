@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.screens
+package com.example.everythingapp.calculator.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,9 +9,9 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.everythingapp.ui.calculatorComponents.CalculatorKeyPad
-import com.example.everythingapp.ui.calculatorComponents.EditorComponent
-import com.example.everythingapp.ui.calculatorComponents.FunctionRow
+import com.example.everythingapp.calculator.ui.calculatorComponents.CalculatorKeyPad
+import com.example.everythingapp.calculator.ui.calculatorComponents.EditorComponent
+import com.example.everythingapp.calculator.ui.calculatorComponents.FunctionRow
 
 @Preview
 @Composable

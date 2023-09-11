@@ -3,7 +3,7 @@ package com.example.everythingapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.everythingapp.ui.EverythingApp
+import com.example.everythingapp.calculator.ui.EverythingApp
 
 class MainActivity : ComponentActivity() {
 

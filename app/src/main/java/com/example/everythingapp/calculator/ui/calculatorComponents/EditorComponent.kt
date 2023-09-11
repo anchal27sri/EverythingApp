@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.calculatorComponents
+package com.example.everythingapp.calculator.ui.calculatorComponents
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.ScrollableState

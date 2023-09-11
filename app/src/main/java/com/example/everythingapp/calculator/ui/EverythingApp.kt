@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui
+package com.example.everythingapp.calculator.ui
 
 import android.app.Activity
 import android.content.Context
@@ -8,7 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.everythingapp.ui.screens.CalculatorScreen
+import com.example.everythingapp.calculator.ui.screens.CalculatorScreen
 
 @Composable
 fun EverythingApp() {
@@ -19,7 +19,6 @@ fun EverythingApp() {
 @Composable
 fun EverythingApp(
     navController: NavHostController,
-    activity: Context = (LocalContext.current as Activity)
 ) {
     NavHost(navController = navController, startDestination = "home") {
         composable("home") {

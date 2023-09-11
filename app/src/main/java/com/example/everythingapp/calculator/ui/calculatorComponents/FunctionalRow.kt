@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.calculatorComponents
+package com.example.everythingapp.calculator.ui.calculatorComponents
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -8,9 +8,9 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.everythingapp.ui.buttons.BackspaceButton
-import com.example.everythingapp.ui.buttons.GoScientificButton
-import com.example.everythingapp.ui.theme.keypadBackgroundColor
+import com.example.everythingapp.calculator.ui.buttons.BackspaceButton
+import com.example.everythingapp.calculator.ui.buttons.GoScientificButton
+import com.example.everythingapp.calculator.ui.theme.keypadBackgroundColor
 
 @Composable
 fun FunctionRow(

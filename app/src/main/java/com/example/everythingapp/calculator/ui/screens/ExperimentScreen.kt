@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.screens
+package com.example.everythingapp.calculator.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -21,7 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.everythingapp.ui.theme.EverythingAppTheme
+import com.example.everythingapp.calculator.ui.theme.EverythingAppTheme
 
 @Composable
 fun ExperimentScreen(

@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.calculatorComponents
+package com.example.everythingapp.calculator.ui.calculatorComponents
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -8,10 +8,10 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.everythingapp.ui.buttons.CalculatorButton
-import com.example.everythingapp.ui.theme.buttonTextColorSoftBlue
-import com.example.everythingapp.ui.theme.buttonTextColorSoftRed
-import com.example.everythingapp.ui.theme.keypadBackgroundColor
+import com.example.everythingapp.calculator.ui.buttons.CalculatorButton
+import com.example.everythingapp.calculator.ui.theme.buttonTextColorSoftBlue
+import com.example.everythingapp.calculator.ui.theme.buttonTextColorSoftRed
+import com.example.everythingapp.calculator.ui.theme.keypadBackgroundColor
 
 @Preview
 @Composable

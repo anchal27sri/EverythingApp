@@ -1,8 +1,7 @@
-package com.example.everythingapp.util
+package com.example.everythingapp.calculator.util
 
 import android.util.Log
 import androidx.compose.runtime.MutableState
-import net.objecthunter.exp4j.Expression
 import net.objecthunter.exp4j.ExpressionBuilder
 import net.objecthunter.exp4j.ValidationResult
 import java.lang.Exception

@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.theme
+package com.example.everythingapp.calculator.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

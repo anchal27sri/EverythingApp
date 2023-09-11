@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.buttons
+package com.example.everythingapp.calculator.ui.buttons
 
 import android.content.Context
 import android.widget.Toast
@@ -20,10 +20,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.everythingapp.R
-import com.example.everythingapp.ui.theme.buttonBackgroundBlack
-import com.example.everythingapp.ui.theme.buttonBorderColor
-import com.example.everythingapp.ui.theme.buttonTextColor
-import com.example.everythingapp.util.performButtonExecution
+import com.example.everythingapp.calculator.ui.theme.buttonBackgroundBlack
+import com.example.everythingapp.calculator.ui.theme.buttonBorderColor
+import com.example.everythingapp.calculator.ui.theme.buttonTextColor
+import com.example.everythingapp.calculator.util.performButtonExecution
 
 @Composable
 fun CalculatorButton(

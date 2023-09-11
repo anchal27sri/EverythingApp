@@ -1,4 +1,4 @@
-package com.example.everythingapp.ui.toasts
+package com.example.everythingapp.calculator.ui.toasts
 
 import android.content.Context
 import android.widget.Toast

@@ -1,4 +1,4 @@
-package com.example.everythingapp.util
+package com.example.everythingapp.calculator.util
 
 val buttonTextToTypeMap = mapOf(
     "C" to ButtonTypes.CLEAR,
