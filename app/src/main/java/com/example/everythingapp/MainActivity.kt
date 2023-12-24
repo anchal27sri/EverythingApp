@@ -1,3 +1,6 @@
+/*
+  For passphrase, look at git-ignored password text file in the local project.
+ */
 package com.example.everythingapp
 
 import android.os.Bundle
