@@ -1,9 +1,6 @@
 package com.example.everythingapp.calculator.ui.calculatorComponents
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.gestures.ScrollableState
-import androidx.compose.foundation.gestures.rememberScrollableState
-import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,10 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-
-fun functionScrollableState(arg: Float): Float {
-    return arg
-}
 
 @Composable
 fun EditorComponent(
