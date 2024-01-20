@@ -168,19 +168,19 @@ enum class TemparatureUnits: IUnits {
 fun isMetric(ordinal: Int): Boolean {
     return ordinal <= 6
 }
-
-val currencyConversionList: List<String> = GeneratorMethods.getCurrencyConversionList()
-
-object GeneratorMethods {
-    fun getCurrencyConversionList(): List<String> {
-        val list = mutableListOf<String>()
-        for (source in CurrencyUnits.values()) {
-            for (target in CurrencyUnits.values()) {
-                if (source != target) {
-                    list.add("${source.name}_to_${target.name}")
-                }
-            }
-        }
-        return list
-    }
-}
+//
+//val currencyConversionList: List<String> = GeneratorMethods.getCurrencyConversionList()
+//
+//object GeneratorMethods {
+//    fun getCurrencyConversionList(): List<String> {
+//        val list = mutableListOf<String>()
+//        for (source in CurrencyUnits.values()) {
+//            for (target in CurrencyUnits.values()) {
+//                if (source != target) {
+//                    list.add("${source.name}_to_${target.name}")
+//                }
+//            }
+//        }
+//        return list
+//    }
+//}

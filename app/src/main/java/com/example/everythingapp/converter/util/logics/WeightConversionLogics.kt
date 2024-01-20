@@ -1,6 +1,7 @@
 package com.example.everythingapp.converter.util.logics
 
 import com.example.everythingapp.converter.util.ConversionInterface
+import com.example.everythingapp.converter.util.CurrencyUnits
 import com.example.everythingapp.converter.util.IUnits
 import com.example.everythingapp.converter.util.MassUnits
 import com.example.everythingapp.converter.util.isMetric
@@ -13,6 +14,8 @@ object WeightConversionLogics : ConversionInterface {
         magnitude: Double,
         sourceUnit: IUnits,
     ): Double {
+        if (sourceUnit.getName() == CurrencyUnits.usDollars.name)
+            return magnitude
         val mapString = "${sourceUnit}_to_${MassUnits.g}"
         return if (isMetric(sourceUnit.getOrdinal()))
             magnitude * 10.0.pow(sourceUnit.getOrdinal() - MassUnits.g.ordinal)
@@ -26,6 +29,8 @@ object WeightConversionLogics : ConversionInterface {
         magnitude: Double,
         targetUnit: IUnits
     ): Double {
+        if (targetUnit.getName() == CurrencyUnits.usDollars.name)
+            return magnitude
         val mapString = "${MassUnits.g}_to_${targetUnit}"
         return if (isMetric(targetUnit.getOrdinal()))
             magnitude * 10.0.pow(MassUnits.g.ordinal - targetUnit.getOrdinal())
