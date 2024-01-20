@@ -1,14 +1,13 @@
 package com.example.everythingapp.calculator.util
 
-import android.util.Log
 import androidx.compose.runtime.MutableState
 import net.objecthunter.exp4j.ExpressionBuilder
 import net.objecthunter.exp4j.ValidationResult
-import java.lang.Exception
 
 fun performButtonExecution(
     expressionState: MutableState<String>,
-    buttonText: String): List<String> {
+    buttonText: String
+): List<String> {
     when(buttonTextToTypeMap[buttonText]!!) {
         ButtonTypes.CLEAR -> {
             expressionState.value = ""
@@ -37,18 +36,22 @@ fun performButtonExecution(
                 return listOf("Error: Empty input")
             val validationResult = validateExpression(expressionState.value)
             if (validationResult.isValid) {
-                Log.d("debug", expressionState.value)
-                val expression = ExpressionBuilder(expressionState.value).build()
-                val result = expression.evaluate()
-                val resultToBeShown = if (result.toInt().toDouble() == result)
-                                            result.toInt().toString()
-                                        else
-                                            result.toString()
-                if (resultToBeShown != "infinity")
-                    expressionState.value = resultToBeShown
-                 else
-                    return listOf("Error: Result exceeded calculator limit")
-            } else {
+                // Log.d("debug", expressionState.value)
+                try {
+                    val expression = ExpressionBuilder(expressionState.value).build()
+                    val result = expression.evaluate()
+                    val resultToBeShown = if (result.toInt().toDouble() == result)
+                        result.toInt().toString()
+                    else
+                        result.toString()
+                    if (resultToBeShown != "infinity")
+                        expressionState.value = resultToBeShown
+                    else
+                        return listOf("Error: Result exceeded calculator limit")
+                } catch (e: Exception) {
+                    return listOf(e.toString().substringAfter(':'))
+                }
+             } else {
                 return validationResult.errors
             }
         }

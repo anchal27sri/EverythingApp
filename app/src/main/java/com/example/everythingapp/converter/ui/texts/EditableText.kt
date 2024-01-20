@@ -15,15 +15,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.everythingapp.converter.ui.halfScreens.isConvertibleToDouble
-import com.example.everythingapp.converter.util.LengthUnits
+import com.example.everythingapp.converter.ui.screens.isConvertibleToDouble
+import com.example.everythingapp.converter.util.IUnits
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FirstHalfEditableText(
     expressionState: MutableState<String>,
-    convertTheOtherOne: (arg: Double, src: LengthUnits) -> Unit,
-    unitNameState: MutableState<LengthUnits>
+    convertTheOtherOne: (arg: Double, src: IUnits) -> Unit,
+    unitNameState: MutableState<IUnits>
 ) {
     TextField(
         modifier = Modifier

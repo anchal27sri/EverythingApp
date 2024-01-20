@@ -1,45 +1,23 @@
 package com.example.everythingapp.converter.util
 
-import java.lang.Exception
-import kotlin.math.pow
-
-val metricConversionMap = mutableMapOf(
-    LengthUnits.mm to 0,
-    LengthUnits.cm to 1,
-    LengthUnits.dm to 2,
-    LengthUnits.m to 3,
-    LengthUnits.dam to 4,
-    LengthUnits.hm to 5,
-    LengthUnits.km to 6,
-)
-
-val nonMetricConversionMap = mutableMapOf(
+val nonMetricLengthConversionMap = mapOf(
     "${LengthUnits.m}_to_${LengthUnits.miles}" to 0.00062137119,
     "${LengthUnits.miles}_to_${LengthUnits.m}" to 1609.34,
 )
 
-fun changeToMeter(
-    magnitude: Double,
-    sourceUnit: LengthUnits,
-): Double {
-    val mapString = "${sourceUnit}_to_${LengthUnits.m}"
-    return if (sourceUnit in metricConversionMap)
-        magnitude * 10.0.pow(metricConversionMap[sourceUnit]!! - metricConversionMap[LengthUnits.m]!!)
-    else if (mapString in nonMetricConversionMap)
-        magnitude * nonMetricConversionMap[mapString]!!
-    else
-        throw Exception()
-}
+val nonMetricMassConversionMap = mapOf(
+    "${MassUnits.kg}_to_${MassUnits.quintal}" to 0.01,
+    "${MassUnits.quintal}_to_${MassUnits.kg}" to 100.0,
+    "${MassUnits.kg}_to_${MassUnits.tone}" to 0.001,
+    "${MassUnits.tone}_to_${MassUnits.kg}" to 1000.0,
+)
 
-fun changeFromMeter(
-    magnitude: Double,
-    targetUnit: LengthUnits
-): Double {
-    val mapString = "${LengthUnits.m}_to_${targetUnit}"
-    return if (targetUnit in metricConversionMap)
-        magnitude * 10.0.pow(metricConversionMap[LengthUnits.m]!! - metricConversionMap[targetUnit]!!)
-    else if (mapString in nonMetricConversionMap)
-        magnitude * nonMetricConversionMap[mapString]!!
-    else
-        throw Exception()
-}
+val currencyConversionMap = mapOf(
+    "${CurrencyUnits.poundSterling}_to_${CurrencyUnits.usDollars}" to 1.27,
+    "${CurrencyUnits.euro}_to_${CurrencyUnits.usDollars}" to 1.11,
+    "${CurrencyUnits.japaneseYen}_to_${CurrencyUnits.usDollars}" to 0.0071,
+    "${CurrencyUnits.indianRupee}_to_${CurrencyUnits.usDollars}" to 0.012,
+    "${CurrencyUnits.chineseYuan}_to_${CurrencyUnits.usDollars}" to 0.14,
+    "${CurrencyUnits.canadianDollars}_to_${CurrencyUnits.usDollars}" to 0.76,
+    "${CurrencyUnits.uaeDirham}_to_${CurrencyUnits.usDollars}" to 0.27,
+)

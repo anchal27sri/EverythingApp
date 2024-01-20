@@ -1,4 +1,4 @@
-package com.example.everythingapp.converter.ui.halfScreens
+package com.example.everythingapp.converter.ui.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -12,7 +12,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -29,16 +28,18 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.everythingapp.converter.ui.texts.FirstHalfEditableText
-import com.example.everythingapp.converter.ui.theme.secondHalBackgroundColor
+import com.example.everythingapp.converter.ui.theme.secondaryGreenColor
+import com.example.everythingapp.converter.util.IUnits
 import com.example.everythingapp.converter.util.LengthUnits
+import com.example.everythingapp.converter.util.UnitTypes
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FirstHalfScreen(
     modifier: Modifier = Modifier,
     expressionState: MutableState<String> = mutableStateOf("1"),
-    convertTheOtherOne: (magnitude: Double, sourceUnit: LengthUnits) -> Unit,
-    unitNameState: MutableState<LengthUnits> = mutableStateOf(LengthUnits.m)
+    convertTheOtherOne: (magnitude: Double, sourceUnit: IUnits) -> Unit,
+    unitNameState: MutableState<IUnits> = mutableStateOf(LengthUnits.m),
+    unitTypes: UnitTypes
 ) {
     Column(
         modifier = modifier,
@@ -58,7 +59,7 @@ fun FirstHalfScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = unitNameState.value.name,
+                    text = unitNameState.value.getName(),
                     modifier = Modifier
                         .padding(8.dp),
                     textAlign = TextAlign.Center,
@@ -77,14 +78,14 @@ fun FirstHalfScreen(
                 expanded = expanded,
                 onDismissRequest = { expanded = false }
             ) {
-                for (units in LengthUnits.values()) {
+                for (unit in unitTypes.getUnitValues() as Array<IUnits>) {
                     DropdownMenuItem(
-                        text = { Text(text = units.name) },
+                        text = { Text(text = unit.getName()) },
                         onClick = {
-                            unitNameState.value = units
+                            unitNameState.value = unit
                             expanded = false
                             if (isConvertibleToDouble(expressionState.value)) {
-                                convertTheOtherOne(expressionState.value.toDouble(), units)
+                                convertTheOtherOne(expressionState.value.toDouble(), unit)
                             }
                         }
                     )
@@ -104,8 +105,9 @@ fun FirstHalfScreen(
 @Composable
 fun FirstHalfScreenPreview() {
     FirstHalfScreen(
-        modifier = Modifier.background(color = secondHalBackgroundColor),
+        modifier = Modifier.background(color = secondaryGreenColor),
         convertTheOtherOne = {_, _, ->  },
+        unitTypes = UnitTypes.LENGTH_UNITS,
     )
 }
 
