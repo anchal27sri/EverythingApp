@@ -14,7 +14,7 @@ object WeightConversionLogics : ConversionInterface {
         magnitude: Double,
         sourceUnit: IUnits,
     ): Double {
-        if (sourceUnit.getName() == CurrencyUnits.usDollars.name)
+        if (sourceUnit.getName() == MassUnits.g.name)
             return magnitude
         val mapString = "${sourceUnit}_to_${MassUnits.g}"
         return if (isMetric(sourceUnit.getOrdinal()))
@@ -29,7 +29,7 @@ object WeightConversionLogics : ConversionInterface {
         magnitude: Double,
         targetUnit: IUnits
     ): Double {
-        if (targetUnit.getName() == CurrencyUnits.usDollars.name)
+        if (targetUnit.getName() == MassUnits.g.name)
             return magnitude
         val mapString = "${MassUnits.g}_to_${targetUnit}"
         return if (isMetric(targetUnit.getOrdinal()))

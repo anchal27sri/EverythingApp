@@ -23,7 +23,7 @@ object TemperatureConversionLogic : ConversionInterface {
         magnitude: Double,
         targetUnit: IUnits
     ): Double {
-        if (targetUnit.getName() == CurrencyUnits.usDollars.name)
+        if (targetUnit.getName() == TemparatureUnits.celcius.name)
             return magnitude
         return if (targetUnit == TemparatureUnits.kelvin)
             magnitude + 273.15
